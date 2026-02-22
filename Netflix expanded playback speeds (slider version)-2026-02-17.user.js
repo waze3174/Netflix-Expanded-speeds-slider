@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Netflix expanded playback speeds (slider version)
+// @name         Netflix expanded playback speeds V1 (slider version)
 // @namespace    http://tampermonkey.net/
 // @version      2026-02-17
 // @description  try to take over the world!
