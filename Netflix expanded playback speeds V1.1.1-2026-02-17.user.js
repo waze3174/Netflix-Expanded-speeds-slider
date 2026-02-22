@@ -89,7 +89,7 @@
     });
 
     var tickContainer = document.createElement("div");
-    tickContainer.style.cssText = "display: grid; grid-template-columns: repeat(" + SPEEDS.length + ", 1fr); width: 100%; margin-top: 6px; letter-spacing: -0.5px;";
+    tickContainer.style.cssText = "display: grid; grid-template-columns: repeat(" + SPEEDS.length + ", 1fr); width: 100%; margin-top: 10px; letter-spacing: -0.5px;";
     SPEEDS.forEach(function(s, i) {
         var tick = document.createElement("span");
         tick.innerHTML = s;
