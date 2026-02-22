@@ -8,4 +8,5 @@ current speed display
 
 saving inbetween episodes
 
-<img width="893" height="265" alt="speed slider" src="https://github.com/user-attachments/assets/1ce6b8ed-cb44-4e4b-8cfa-8699dd81f108" />
+<img width="716" height="238" alt="image" src="https://github.com/user-attachments/assets/5d0ef88b-197b-4c34-8c2c-a075d82fbfd2" />
+
