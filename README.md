@@ -8,5 +8,6 @@ current speed display
 
 saving inbetween episodes
 
-<img width="716" height="238" alt="image" src="https://github.com/user-attachments/assets/5d0ef88b-197b-4c34-8c2c-a075d82fbfd2" />
+<img width="1105" height="442" alt="image" src="https://github.com/user-attachments/assets/c664d0f4-910b-46dd-b593-f33ab6018602" />
+
 
