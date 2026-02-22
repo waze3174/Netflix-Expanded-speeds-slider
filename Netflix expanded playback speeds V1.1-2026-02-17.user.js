@@ -2,7 +2,7 @@
 // @name         Netflix expanded playback speeds V1.1
 // @namespace    http://tampermonkey.net/
 // @version      2026-02-17
-// @description  try to take over the world!
+// @description  Adds more playback speeds to netflix by replacing the slider
 // @author       Waze3174
 // @match        https://www.netflix.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=netflix.com
@@ -37,10 +37,10 @@
     document.head.appendChild(style);
 
     var sliderContainer = document.createElement("div");
-    sliderContainer.style.cssText = "display: flex; flex-direction: column; align-items: center; padding: 16px 28px 20px; width: 100%; box-sizing: border-box;";
+    sliderContainer.style.cssText = "display: flex; flex-direction: column; align-items: center; padding: 8px 20px 10px; width: 100%; box-sizing: border-box;";
 
     var headerRow = document.createElement("div");
-    headerRow.style.cssText = "display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 14px;";
+    headerRow.style.cssText = "display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px;";
 
     var titleBlock = document.createElement("div");
     titleBlock.style.cssText = "display: flex; flex-direction: column;";
@@ -64,7 +64,7 @@
     speedLabelTitle.innerHTML = "Current Speed";
 
     var speedLabel = document.createElement("div");
-    speedLabel.style.cssText = "color: #fff; font-weight: bold; font-size: 26px;";
+    speedLabel.style.cssText = "color: #fff; font-weight: bold; font-size: 26px; line-height: 1;";
 
     speedLabelWrapper.appendChild(speedLabelTitle);
     speedLabelWrapper.appendChild(speedLabel);
@@ -144,6 +144,18 @@
         }, true);
     }
 
+    function fixPosition(netspeedwindow) {
+        var el = netspeedwindow;
+        while (el && el.parentElement) {
+            el = el.parentElement;
+            if (el.style && el.style.left && el.style.top) {
+                el.style.left = (parseInt(el.style.left) + 280) + "px";
+                el.style.top = (parseInt(el.style.top) + 60) + "px";
+                break;
+            }
+        }
+    }
+
     function injectIntoSlider(netspeedwindow) {
         if (injected && netspeedwindow.contains(sliderContainer)) return;
         injected = true;
@@ -159,6 +171,8 @@
         if (parent) addHoverGrace(parent);
         if (parent && parent.parentElement) addHoverGrace(parent.parentElement);
         if (parent && parent.parentElement && parent.parentElement.parentElement) addHoverGrace(parent.parentElement.parentElement);
+
+        fixPosition(netspeedwindow);
 
         var video = document.querySelector('video');
         if (video) restoreSpeed(video);
